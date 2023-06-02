@@ -112,6 +112,9 @@ h6 {
 .header {
   background: #f4f9e2;
   padding: 30px 0px;
+  @media (max-width: 400px) {
+    padding: 15px 0;
+  }
 }
 
 .header__row {
@@ -167,7 +170,7 @@ h6 {
   color: #62d0df;
   margin-bottom: 30px;
   margin-top: 160px;
-  @media (max-width: 800px)  {
+  @media (max-width: 800px) {
     margin-top: 120px;
   }
   @media (max-width: 640px) {
@@ -285,7 +288,7 @@ h6 {
   @media (max-width: 800px) {
     height: 350px;
     width: 200px;
-    transform: translateX(7%)
+    transform: translateX(7%);
   }
   @media (max-width: 640px) {
     display: none;
@@ -302,6 +305,18 @@ h6 {
   justify-content: start;
   align-items: start;
   gap: 225px;
+  @media (max-width: 1200px) {
+    gap: 175px;
+  }
+  @media (max-width: 992px) {
+    gap: 150px;
+  }
+  @media (max-width: 767px) {
+    gap: 100px;
+  }
+  @media (max-width: 500px) {
+    gap: 50px;
+  }
 }
 
 .about-us__title {
@@ -335,14 +350,22 @@ h6 {
 }
 
 .four-colours__row {
-  display: flex;
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  @media (max-width: 1075px) {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
 }
 
 .four-colours__column {
   background-color: #ffe2de;
   padding-top: 75px;
   padding-bottom: 210px;
-  flex: 0 0 25%;
   padding: 75px 52px 210px 52px;
 }
 
@@ -387,13 +410,21 @@ h6 {
 }
 
 .six-colours__row {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  @media (max-width: 1275px) {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
 }
 
 .six-colours__column {
   background-color: #22356f;
-  flex: 0 0 33.3%;
   padding: 100px 70px 280px 70px;
 }
 .six-colours__border {
@@ -421,50 +452,72 @@ h6 {
   gap: 20px;
 }
 
-.six-colours__column_d {
+.six-colours_column_d {
   background: #0052c1;
 }
 
-.six-colours__column_p {
-  background-image: url(/imgs/3.png);
+.background {
+  background-image: url(./imgs/3.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
-.six-colours__column_b {
+.six-colours_column_b {
   background: #62d0df;
 }
 
-.six-colours__column_gy {
+.six-colours_column_gy {
   background: #dee1ff;
 }
 
-.six-colours__column_pr {
+.six-colours_column_pr {
   background: #8f00ff;
 }
 
 .description {
-  margin-bottom: 40px;
+  margin: 80px 0;
+  @media (max-width: 1060px) {
+    margin: 60px 0;
+  }
+  @media (max-width: 660px) {
+    margin: 40px 0;
+  }
 }
 
 .description__row {
   display: flex;
   flex-wrap: wrap;
+  row-gap: 60px;
+  text-align: center;
+  @media (max-width: 1060px) {
+    text-align: center;
+  }
+  @media (max-width: 660px) {
+    text-align: center;
+  }
 }
 
 .description__column {
   flex: 0 0 33.3%;
   background: #ffffff;
+  @media (max-width: 1060px) {
+    flex: 0 0 50%;
+  }
+  @media (max-width: 660px) {
+    flex: 0 0 100%;
+  }
 }
 
 .description__title {
-  padding: 55px 140px 30px 105px;
   font-size: 28px;
   line-height: 33px;
   letter-spacing: -0.03em;
   color: #22356f;
+  padding-bottom: 20px;
 }
 
 .description__subtitle {
-  margin: 0px 80px 35px 105px;
+  /* margin: 0px 80px 35px 105px; */
   font-size: 16px;
   line-height: 25px;
   letter-spacing: -0.03em;
@@ -474,6 +527,24 @@ h6 {
 .smiling-man__row {
   display: flex;
   gap: 105px; /*чому воно дало гап від картинки для тексту, а не гап для картинки від бордера ??? */
+  @media (max-width: 800px) {
+    display: block;
+    text-align: center;
+    align-items: center;
+  }
+  @media (max-width: 1060px) {
+    gap: 55px;
+  }
+}
+
+.smiling-man__img {
+  width: 100%;
+  @media (max-width: 800px) {
+    width: 80%;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .smiling-man__title {
@@ -484,6 +555,14 @@ h6 {
   line-height: 12px;
   letter-spacing: 0.06em;
   color: #22356f;
+  @media (max-width: 1060px) {
+    margin-top: 50px;
+    margin-bottom: 60px;
+  }
+  @media (max-width: 660px) {
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
 }
 .smiling-man__subtitle {
   margin-bottom: 150px;
@@ -492,6 +571,14 @@ h6 {
   line-height: 53px;
   letter-spacing: -0.01em;
   color: #22356f;
+  @media (max-width: 1060px) {
+    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+  @media (max-width: 800px) {
+    font-size: 26px;
+  }
 }
 .blue-letters {
   color: #6cd3e1;
@@ -500,20 +587,55 @@ h6 {
   font-size: 16px;
   text-transform: uppercase;
   line-height: 23px;
-  display: flex;
-  align-items: center;
   letter-spacing: 0.1em;
   color: #fab63e;
+  @media (max-width: 1060px) {
+    align-items: center;
+  }
+  @media (max-width: 800px) {
+    align-items: center;
+  }
 }
 
 .smiling-niga {
-  background-color: #22356f;
+  /* background-color: #22356f; */
 }
 
 .smiling-niga__row {
   display: flex;
   justify-content: end;
-  gap: 200px;
+  @media (max-width: 800px) {
+    display: block;
+  }
+}
+
+.smiling-niga__column {
+  background-color: #22356f;
+  @media (max-width: 1060px) {
+    flex: 0 0 50%;
+  }
+  @media (max-width: 800px) {
+    flex: 0 0 100%;
+  }
+}
+.test {
+  width: 70%;
+  padding-left: 100px;
+  @media (max-width: 1060px) {
+    padding-left: 70px;
+  }
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+}
+.test2 {
+  width: 30%;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+}
+.test2 img {
+  width: 100%;
 }
 
 .smiling-niga__btn {
@@ -537,12 +659,21 @@ h6 {
   color: #ffffff;
   padding-top: 230px;
   padding-bottom: 75px;
+  @media (max-width: 1060px) {
+    padding-top: 100px;
+    padding-bottom: 35px;
+    font-size: 50px;
+    line-height: 50px;
+  }
 }
 .smiling-niga__content {
   font-size: 36px;
   line-height: 53px;
   letter-spacing: -0.005em;
   color: #ffffff;
+  @media (max-width: 1060px) {
+    line-height: 35px;
+  }
 }
 .smiling-niga__btn2 {
   font-size: 16px;
